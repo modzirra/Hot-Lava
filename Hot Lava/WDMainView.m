@@ -6,13 +6,13 @@
 //  Copyright (c) 2013 Web Diggity. All rights reserved.
 //
 
-#import "WDViewController.h"
+#import "WDMainView.h"
 
-@interface WDViewController ()
+@interface WDMainView ()
 
 @end
 
-@implementation WDViewController
+@implementation WDMainView
 
 - (void)viewDidLoad
 {

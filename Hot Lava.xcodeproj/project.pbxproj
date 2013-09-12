@@ -14,13 +14,15 @@
 		73114C1E17E259E2006525E5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 73114C1D17E259E2006525E5 /* main.m */; };
 		73114C2217E259E2006525E5 /* WDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 73114C2117E259E2006525E5 /* WDAppDelegate.m */; };
 		73114C2517E259E2006525E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73114C2317E259E2006525E5 /* Main.storyboard */; };
-		73114C2817E259E2006525E5 /* WDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73114C2717E259E2006525E5 /* WDViewController.m */; };
+		73114C2817E259E2006525E5 /* WDMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73114C2717E259E2006525E5 /* WDMainView.m */; };
 		73114C2A17E259E2006525E5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73114C2917E259E2006525E5 /* Images.xcassets */; };
 		73114C3117E259E2006525E5 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73114C3017E259E2006525E5 /* XCTest.framework */; };
 		73114C3217E259E2006525E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73114C1117E259E2006525E5 /* Foundation.framework */; };
 		73114C3317E259E2006525E5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73114C1517E259E2006525E5 /* UIKit.framework */; };
 		73114C3B17E259E2006525E5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 73114C3917E259E2006525E5 /* InfoPlist.strings */; };
 		73114C3D17E259E2006525E5 /* Hot_LavaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 73114C3C17E259E2006525E5 /* Hot_LavaTests.m */; };
+		73114C4C17E26E03006525E5 /* bubble1.png in Resources */ = {isa = PBXBuildFile; fileRef = 73114C4B17E26E03006525E5 /* bubble1.png */; };
+		73114C4E17E26E0F006525E5 /* bubble2.png in Resources */ = {isa = PBXBuildFile; fileRef = 73114C4D17E26E0F006525E5 /* bubble2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,14 +47,16 @@
 		73114C2017E259E2006525E5 /* WDAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDAppDelegate.h; sourceTree = "<group>"; };
 		73114C2117E259E2006525E5 /* WDAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDAppDelegate.m; sourceTree = "<group>"; };
 		73114C2417E259E2006525E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		73114C2617E259E2006525E5 /* WDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDViewController.h; sourceTree = "<group>"; };
-		73114C2717E259E2006525E5 /* WDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDViewController.m; sourceTree = "<group>"; };
+		73114C2617E259E2006525E5 /* WDMainView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDMainView.h; sourceTree = "<group>"; };
+		73114C2717E259E2006525E5 /* WDMainView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDMainView.m; sourceTree = "<group>"; };
 		73114C2917E259E2006525E5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		73114C2F17E259E2006525E5 /* Hot LavaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hot LavaTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		73114C3017E259E2006525E5 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		73114C3817E259E2006525E5 /* Hot LavaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Hot LavaTests-Info.plist"; sourceTree = "<group>"; };
 		73114C3A17E259E2006525E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		73114C3C17E259E2006525E5 /* Hot_LavaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hot_LavaTests.m; sourceTree = "<group>"; };
+		73114C4B17E26E03006525E5 /* bubble1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble1.png; sourceTree = "<group>"; };
+		73114C4D17E26E0F006525E5 /* bubble2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble2.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,11 +116,12 @@
 		73114C1717E259E2006525E5 /* Hot Lava */ = {
 			isa = PBXGroup;
 			children = (
+				73114C4617E26684006525E5 /* resources */,
 				73114C2017E259E2006525E5 /* WDAppDelegate.h */,
 				73114C2117E259E2006525E5 /* WDAppDelegate.m */,
 				73114C2317E259E2006525E5 /* Main.storyboard */,
-				73114C2617E259E2006525E5 /* WDViewController.h */,
-				73114C2717E259E2006525E5 /* WDViewController.m */,
+				73114C2617E259E2006525E5 /* WDMainView.h */,
+				73114C2717E259E2006525E5 /* WDMainView.m */,
 				73114C2917E259E2006525E5 /* Images.xcassets */,
 				73114C1817E259E2006525E5 /* Supporting Files */,
 			);
@@ -150,6 +155,15 @@
 				73114C3917E259E2006525E5 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		73114C4617E26684006525E5 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				73114C4D17E26E0F006525E5 /* bubble2.png */,
+				73114C4B17E26E03006525E5 /* bubble1.png */,
+			);
+			path = resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +249,8 @@
 				73114C2A17E259E2006525E5 /* Images.xcassets in Resources */,
 				73114C1C17E259E2006525E5 /* InfoPlist.strings in Resources */,
 				73114C2517E259E2006525E5 /* Main.storyboard in Resources */,
+				73114C4E17E26E0F006525E5 /* bubble2.png in Resources */,
+				73114C4C17E26E03006525E5 /* bubble1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,7 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73114C2817E259E2006525E5 /* WDViewController.m in Sources */,
+				73114C2817E259E2006525E5 /* WDMainView.m in Sources */,
 				73114C1E17E259E2006525E5 /* main.m in Sources */,
 				73114C2217E259E2006525E5 /* WDAppDelegate.m in Sources */,
 			);
