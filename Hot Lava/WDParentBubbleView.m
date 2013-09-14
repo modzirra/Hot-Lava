@@ -7,25 +7,22 @@
 //
 
 #import "WDParentBubbleView.h"
+#import "WDChildBubbleView.h"
 
 @implementation WDParentBubbleView
 
-- (id)initWithFrame:(CGRect)frame
+-(void) awakeFromNib
 {
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
+    [super awakeFromNib];
+    for( NSInteger i = 0; i < 4; i++ ) {
+        CGRect frame;
+        frame.origin.x = -10.*i;
+        frame.origin.y = -10.*i;
+        frame.size.width = 10.;
+        frame.size.height = 10.;
+        WDChildBubbleView *v = [[WDChildBubbleView alloc] initWithFrame:frame];
+
+    [self addSubview:v];
     }
-    return self;
 }
-
-/*
- // Only override drawRect: if you perform custom drawing.
- // An empty implementation adversely affects performance during animation.
- - (void)drawRect:(CGRect)rect
- {
- // Drawing code
- }
- */
-
 @end

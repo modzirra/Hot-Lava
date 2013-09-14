@@ -9,6 +9,7 @@
 #import "WDMainView.h"
 #import "WDBehaviorController.h"
 #import "WDParentBubbleView.h"
+#import "WDChildBubbleView.h"
 
 @interface WDMainView (){
     NSArray *masterArray;
