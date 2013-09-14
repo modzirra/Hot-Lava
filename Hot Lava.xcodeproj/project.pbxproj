@@ -23,6 +23,9 @@
 		73114C3D17E259E2006525E5 /* Hot_LavaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 73114C3C17E259E2006525E5 /* Hot_LavaTests.m */; };
 		73114C4C17E26E03006525E5 /* bubble1.png in Resources */ = {isa = PBXBuildFile; fileRef = 73114C4B17E26E03006525E5 /* bubble1.png */; };
 		73114C4E17E26E0F006525E5 /* bubble2.png in Resources */ = {isa = PBXBuildFile; fileRef = 73114C4D17E26E0F006525E5 /* bubble2.png */; };
+		73114C5017E27014006525E5 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73114C4F17E27014006525E5 /* CoreMotion.framework */; };
+		73114C5317E3ADD4006525E5 /* WDBehaviorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73114C5217E3ADD4006525E5 /* WDBehaviorController.m */; };
+		73114C5617E3E3E7006525E5 /* WDParentBubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73114C5517E3E3E7006525E5 /* WDParentBubbleView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,11 @@
 		73114C3C17E259E2006525E5 /* Hot_LavaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hot_LavaTests.m; sourceTree = "<group>"; };
 		73114C4B17E26E03006525E5 /* bubble1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble1.png; sourceTree = "<group>"; };
 		73114C4D17E26E0F006525E5 /* bubble2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble2.png; sourceTree = "<group>"; };
+		73114C4F17E27014006525E5 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		73114C5117E3ADD4006525E5 /* WDBehaviorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDBehaviorController.h; sourceTree = "<group>"; };
+		73114C5217E3ADD4006525E5 /* WDBehaviorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDBehaviorController.m; sourceTree = "<group>"; };
+		73114C5417E3E3E7006525E5 /* WDParentBubbleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDParentBubbleView.h; sourceTree = "<group>"; };
+		73114C5517E3E3E7006525E5 /* WDParentBubbleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDParentBubbleView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73114C5017E27014006525E5 /* CoreMotion.framework in Frameworks */,
 				73114C1417E259E2006525E5 /* CoreGraphics.framework in Frameworks */,
 				73114C1617E259E2006525E5 /* UIKit.framework in Frameworks */,
 				73114C1217E259E2006525E5 /* Foundation.framework in Frameworks */,
@@ -105,6 +114,7 @@
 		73114C1017E259E2006525E5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				73114C4F17E27014006525E5 /* CoreMotion.framework */,
 				73114C1117E259E2006525E5 /* Foundation.framework */,
 				73114C1317E259E2006525E5 /* CoreGraphics.framework */,
 				73114C1517E259E2006525E5 /* UIKit.framework */,
@@ -116,14 +126,18 @@
 		73114C1717E259E2006525E5 /* Hot Lava */ = {
 			isa = PBXGroup;
 			children = (
-				73114C4617E26684006525E5 /* resources */,
 				73114C2017E259E2006525E5 /* WDAppDelegate.h */,
 				73114C2117E259E2006525E5 /* WDAppDelegate.m */,
 				73114C2317E259E2006525E5 /* Main.storyboard */,
 				73114C2617E259E2006525E5 /* WDMainView.h */,
 				73114C2717E259E2006525E5 /* WDMainView.m */,
+				73114C5417E3E3E7006525E5 /* WDParentBubbleView.h */,
+				73114C5517E3E3E7006525E5 /* WDParentBubbleView.m */,
+				73114C5117E3ADD4006525E5 /* WDBehaviorController.h */,
+				73114C5217E3ADD4006525E5 /* WDBehaviorController.m */,
 				73114C2917E259E2006525E5 /* Images.xcassets */,
 				73114C1817E259E2006525E5 /* Supporting Files */,
+				73114C4617E26684006525E5 /* Resources */,
 			);
 			path = "Hot Lava";
 			sourceTree = "<group>";
@@ -157,12 +171,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		73114C4617E26684006525E5 /* resources */ = {
+		73114C4617E26684006525E5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				73114C4D17E26E0F006525E5 /* bubble2.png */,
 				73114C4B17E26E03006525E5 /* bubble1.png */,
 			);
+			name = Resources;
 			path = resources;
 			sourceTree = "<group>";
 		};
@@ -269,8 +284,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73114C5317E3ADD4006525E5 /* WDBehaviorController.m in Sources */,
 				73114C2817E259E2006525E5 /* WDMainView.m in Sources */,
 				73114C1E17E259E2006525E5 /* main.m in Sources */,
+				73114C5617E3E3E7006525E5 /* WDParentBubbleView.m in Sources */,
 				73114C2217E259E2006525E5 /* WDAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
