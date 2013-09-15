@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 Web Diggity. All rights reserved.
 //
 
+#import "WDParentBubbleView.h"
 #import "WDChildBubbleView.h"
 
 @implementation WDChildBubbleView

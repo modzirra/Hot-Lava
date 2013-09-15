@@ -20,4 +20,15 @@
     return self;
 }
 
+
+-(instancetype)initSubWithItems:(NSArray*)items getYAxis:(CGFloat *)value {
+    if (self=[super init]) {
+        _g = [[UIGravityBehavior alloc] initWithItems:items];
+        UICollisionBehavior* c = [[UICollisionBehavior alloc] initWithItems:items];
+        c.translatesReferenceBoundsIntoBoundary = TRUE;
+        [self addChildBehavior:_g];
+        [self addChildBehavior:c];
+    }
+    return self;
+}
 @end

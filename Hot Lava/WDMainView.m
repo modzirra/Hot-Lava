@@ -8,14 +8,21 @@
 
 #import "WDMainView.h"
 #import "WDBehaviorController.h"
+#import "WDSubBehaviorController.h"
 #import "WDParentBubbleView.h"
 #import "WDChildBubbleView.h"
 
+
 @interface WDMainView (){
     NSArray *masterArray;
+    NSArray *subBubbleArray;
     
     UIDynamicAnimator* animator;
     WDBehaviorController* behavior;
+    WDBehaviorController* subBehavior;
+    
+    UIDynamicAnimator* subAnimator;
+    
     CGFloat CurrentYAxis;
     CGFloat CurrentXAxis;
 }
@@ -30,13 +37,48 @@
     
     CurrentYAxis =0;
     
-    NSMutableArray *containerArray = [NSMutableArray new];
+    //make containers for arrays of bubble objects, parent and children
+    NSMutableArray *parentContainerArray = [NSMutableArray new];
+    NSMutableArray *subContainerArray = [NSMutableArray new];
+
+    //for each view in subview do...
     for( UIView *view in self.view.subviews ) {
+        //check for parent bubble view
         if( [view isKindOfClass:[WDParentBubbleView class]] ) {
-            [containerArray addObject:view];
+            
+            //add to changeable array
+            [parentContainerArray addObject:view];
+
+            //create 5 sub items
+            for( NSInteger i = 0; i < 4; i++ ) {
+                CGRect frame;
+                frame.origin.x = 55+(i*4);
+                frame.origin.y = 55+(i*7);
+                frame.size.width = 25;
+                frame.size.height = 25;
+                
+                WDChildBubbleView *v = [[WDChildBubbleView alloc] initWithFrame:frame];
+                v.backgroundColor = [UIColor redColor];
+                
+                [view addSubview:v];
+                
+                //add items to sub containter array
+                [subContainerArray addObject:v];
+            }
+            
+            
+            //replace original sub array with new contents of objects in sub container
+            subBubbleArray=[NSArray arrayWithArray:subContainerArray];
+            //animate!
+            subAnimator = [[UIDynamicAnimator alloc] initWithReferenceView:view];
+            
+            //talk about behavior!  boo doesn't work.
+            subBehavior = [[WDBehaviorController alloc] initSubWithItems:subBubbleArray
+                           getYAxis:&(CurrentXAxis)];
+            [subAnimator addBehavior: subBehavior];
         }
     }
-    masterArray = [NSArray arrayWithArray:containerArray];
+    masterArray = [NSArray arrayWithArray:subBubbleArray];
     
     for( WDParentBubbleView *v in masterArray ) {
         NSLog( @"%@", NSStringFromCGRect( v.frame ) );

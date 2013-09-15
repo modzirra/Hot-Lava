@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>5F673DE1-1072-408D-86E8-2FB05055D06D</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Hot Lava</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>C6A516D5-5BBF-492C-9031-91E66E4397C1</key>
+		<string>https://github.com/modzirra/Hot-Lava.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Hot Lava.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>C6A516D5-5BBF-492C-9031-91E66E4397C1</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/modzirra/Hot-Lava.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>C6A516D5-5BBF-492C-9031-91E66E4397C1</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C6A516D5-5BBF-492C-9031-91E66E4397C1</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Hot Lava</string>
+		</dict>
+	</array>
+</dict>
+</plist>

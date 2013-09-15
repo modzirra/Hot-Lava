@@ -10,10 +10,10 @@
 #import "WDChildBubbleView.h"
 
 @implementation WDParentBubbleView
-
 -(void) awakeFromNib
 {
     [super awakeFromNib];
+    
     for( NSInteger i = 0; i < 4; i++ ) {
         CGRect frame;
         frame.origin.x = -10.*i;
@@ -21,8 +21,7 @@
         frame.size.width = 10.;
         frame.size.height = 10.;
         WDChildBubbleView *v = [[WDChildBubbleView alloc] initWithFrame:frame];
-
-    [self addSubview:v];
+        [self addSubview:v];
     }
 }
 @end
