@@ -27,6 +27,7 @@
 		73114C5317E3ADD4006525E5 /* WDBehaviorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73114C5217E3ADD4006525E5 /* WDBehaviorController.m */; };
 		73114C5617E3E3E7006525E5 /* WDParentBubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73114C5517E3E3E7006525E5 /* WDParentBubbleView.m */; };
 		73114C5917E4FF9B006525E5 /* WDChildBubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73114C5817E4FF9B006525E5 /* WDChildBubbleView.m */; };
+		73B9B9D317E6CF67007FAD5B /* WDHiddenView.m in Sources */ = {isa = PBXBuildFile; fileRef = 73B9B9D217E6CF67007FAD5B /* WDHiddenView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,8 +69,8 @@
 		73114C5517E3E3E7006525E5 /* WDParentBubbleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDParentBubbleView.m; sourceTree = "<group>"; };
 		73114C5717E4FF9B006525E5 /* WDChildBubbleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDChildBubbleView.h; sourceTree = "<group>"; };
 		73114C5817E4FF9B006525E5 /* WDChildBubbleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDChildBubbleView.m; sourceTree = "<group>"; };
-		7394C8A317E6B91B00C3AA94 /* WDSubBehaviorController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDSubBehaviorController.h; sourceTree = "<group>"; };
-		7394C8A417E6B91B00C3AA94 /* WDSubBehaviorController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDSubBehaviorController.m; sourceTree = "<group>"; };
+		73B9B9D117E6CF67007FAD5B /* WDHiddenView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WDHiddenView.h; path = ../WDHiddenView.h; sourceTree = "<group>"; };
+		73B9B9D217E6CF67007FAD5B /* WDHiddenView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WDHiddenView.m; path = ../WDHiddenView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,8 +141,8 @@
 				73114C5517E3E3E7006525E5 /* WDParentBubbleView.m */,
 				73114C5717E4FF9B006525E5 /* WDChildBubbleView.h */,
 				73114C5817E4FF9B006525E5 /* WDChildBubbleView.m */,
-				7394C8A317E6B91B00C3AA94 /* WDSubBehaviorController.h */,
-				7394C8A417E6B91B00C3AA94 /* WDSubBehaviorController.m */,
+				73B9B9D117E6CF67007FAD5B /* WDHiddenView.h */,
+				73B9B9D217E6CF67007FAD5B /* WDHiddenView.m */,
 				73114C5117E3ADD4006525E5 /* WDBehaviorController.h */,
 				73114C5217E3ADD4006525E5 /* WDBehaviorController.m */,
 				73114C2917E259E2006525E5 /* Images.xcassets */,
@@ -294,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				73114C5317E3ADD4006525E5 /* WDBehaviorController.m in Sources */,
+				73B9B9D317E6CF67007FAD5B /* WDHiddenView.m in Sources */,
 				73114C2817E259E2006525E5 /* WDMainView.m in Sources */,
 				73114C5917E4FF9B006525E5 /* WDChildBubbleView.m in Sources */,
 				73114C1E17E259E2006525E5 /* main.m in Sources */,

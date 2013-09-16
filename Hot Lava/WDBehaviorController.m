@@ -21,7 +21,7 @@
 }
 
 
--(instancetype)initSubWithItems:(NSArray*)items getYAxis:(CGFloat *)value {
+-(instancetype)initSubViewWithItems:(NSArray*)items getYAxis:(CGFloat *)value {
     if (self=[super init]) {
         _g = [[UIGravityBehavior alloc] initWithItems:items];
         UICollisionBehavior* c = [[UICollisionBehavior alloc] initWithItems:items];

@@ -10,7 +10,7 @@
 #import "WDBehaviorController.h"
 #import "WDParentBubbleView.h"
 #import "WDChildBubbleView.h"
-#import "WDSubBehaviorController.h"
+#import "WDHiddenView.h"
 
 @interface WDMainView (){
     NSArray *masterArray;
@@ -70,7 +70,7 @@
         containerFrame.size.height = 111;
         
         
-        WDSubBehaviorController *containerView = [[WDSubBehaviorController alloc] initWithFrame:containerFrame];
+        WDHiddenView *containerView = [[WDHiddenView alloc] initWithFrame:containerFrame];
         containerView.backgroundColor = [UIColor clearColor];
         [outerBubbleView addSubview:containerView];
         
