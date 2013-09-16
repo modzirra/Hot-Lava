@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 Web Diggity. All rights reserved.
 //
 
-#import "WDParentBubbleView.h"
+#import <UIKit/UIKit.h>
 
-@interface WDChildBubbleView : WDParentBubbleView
+@interface WDChildBubbleView : UIView
 
 @end

@@ -10,15 +10,14 @@
 
 @implementation WDSubBehaviorController
 
--(instancetype)initWithItems:(NSArray*)items getYAxis:(CGFloat *)value {
-    if (self=[super init]) {
-        _g = [[UIGravityBehavior alloc] initWithItems:items];
-        UICollisionBehavior* c = [[UICollisionBehavior alloc] initWithItems:items];
-        c.translatesReferenceBoundsIntoBoundary = TRUE;
-        [self addChildBehavior:_g];
-        [self addChildBehavior:c];
+- (id)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        // Initialization code
     }
     return self;
 }
+
 
 @end

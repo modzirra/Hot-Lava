@@ -8,9 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WDSubBehaviorController : UIDynamicBehavior
-
-    -(instancetype)initWithItems:(NSArray*)items getYAxis:(CGFloat *)value;
-    @property (strong, nonatomic) UIGravityBehavior*   g;
+@interface WDSubBehaviorController : UIView
 
 @end

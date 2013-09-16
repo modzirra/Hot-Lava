@@ -11,9 +11,9 @@
 @interface WDBehaviorController : UIDynamicBehavior
 
     -(instancetype)initWithItems:(NSArray*)items getYAxis:(CGFloat *)value;
-    @property (strong, nonatomic) UIGravityBehavior* g;
+    -(instancetype)initSubViewWithItems:(NSArray*)items getYAxis:(CGFloat *)value;
 
-    -(instancetype)initSubWithItems:(NSArray*)items getYAxis:(CGFloat *)value;
+    @property (strong, nonatomic) UIGravityBehavior* g;
     @property (strong, nonatomic) UIGravityBehavior* g2;
 
 @end

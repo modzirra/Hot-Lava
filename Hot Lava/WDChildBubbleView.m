@@ -6,7 +6,6 @@
 //  Copyright (c) 2013 Web Diggity. All rights reserved.
 //
 
-#import "WDParentBubbleView.h"
 #import "WDChildBubbleView.h"
 
 @implementation WDChildBubbleView
@@ -15,7 +14,6 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [UIColor blueColor];
     }
     return self;
 }

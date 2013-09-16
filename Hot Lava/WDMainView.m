@@ -8,10 +8,9 @@
 
 #import "WDMainView.h"
 #import "WDBehaviorController.h"
-#import "WDSubBehaviorController.h"
 #import "WDParentBubbleView.h"
 #import "WDChildBubbleView.h"
-
+#import "WDSubBehaviorController.h"
 
 @interface WDMainView (){
     NSArray *masterArray;
@@ -19,9 +18,9 @@
     
     UIDynamicAnimator* animator;
     WDBehaviorController* behavior;
-    WDBehaviorController* subBehavior;
-    
+
     UIDynamicAnimator* subAnimator;
+    WDBehaviorController* subBehavior;
     
     CGFloat CurrentYAxis;
     CGFloat CurrentXAxis;
@@ -41,49 +40,77 @@
     NSMutableArray *parentContainerArray = [NSMutableArray new];
     NSMutableArray *subContainerArray = [NSMutableArray new];
 
-    //for each view in subview do...
-    for( UIView *view in self.view.subviews ) {
-        //check for parent bubble view
-        if( [view isKindOfClass:[WDParentBubbleView class]] ) {
+    //create parent bubble
+    for( NSInteger x = 0; x<1; x++ ) {
+        
+        CGRect outerbubbleFrame;
+        outerbubbleFrame.origin.x = x * 10;
+        outerbubbleFrame.origin.y = x * 10;
+        outerbubbleFrame.size.width = 200;
+        outerbubbleFrame.size.height = 200;
+        
+        WDParentBubbleView*outerBubbleView = [[WDParentBubbleView alloc] initWithFrame:outerbubbleFrame];
+        
+        
+        //outer bubble image
+        outerBubbleView.backgroundColor = [UIColor clearColor];
+        UIImageView* outerBubbleImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 200, 200)];
+        outerBubbleImage.image = [UIImage imageNamed:@"bubble1.png"];
+        outerBubbleImage.contentMode=UIViewContentModeScaleAspectFit;
+        [outerBubbleView addSubview:outerBubbleImage];
+        [self.view addSubview:outerBubbleView];
+        
+        
+        
+        //container for bubbles
+        CGRect containerFrame;
+        containerFrame.origin.x = 34;
+        containerFrame.origin.y = 51;
+        containerFrame.size.width = 132;
+        containerFrame.size.height = 111;
+        
+        
+        WDSubBehaviorController *containerView = [[WDSubBehaviorController alloc] initWithFrame:containerFrame];
+        containerView.backgroundColor = [UIColor clearColor];
+        [outerBubbleView addSubview:containerView];
+        
+        
+        
+        //loop for creating inner bubbles
+        for( NSInteger i = 0; i < 4; i++ ) {
+            CGRect frame;
+            frame.origin.x = 55+(i*4);
+            frame.origin.y = 55+(i*7);
+            frame.size.width = 25;
+            frame.size.height = 25;
+            WDChildBubbleView*v = [[WDChildBubbleView alloc] initWithFrame:frame];
+            v.backgroundColor = [UIColor clearColor];
             
-            //add to changeable array
-            [parentContainerArray addObject:view];
-
-            //create 5 sub items
-            for( NSInteger i = 0; i < 4; i++ ) {
-                CGRect frame;
-                frame.origin.x = 55+(i*4);
-                frame.origin.y = 55+(i*7);
-                frame.size.width = 25;
-                frame.size.height = 25;
-                
-                WDChildBubbleView *v = [[WDChildBubbleView alloc] initWithFrame:frame];
-                v.backgroundColor = [UIColor redColor];
-                
-                [view addSubview:v];
-                
-                //add items to sub containter array
-                [subContainerArray addObject:v];
-            }
+            //inner bubble image
+            UIImageView* backBubbleImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 25, 25)];
+            backBubbleImage.image = [UIImage imageNamed:@"bubble2.png"];
+            backBubbleImage.contentMode=UIViewContentModeScaleAspectFit;
+            [v addSubview:backBubbleImage];
             
-            
-            //replace original sub array with new contents of objects in sub container
-            subBubbleArray=[NSArray arrayWithArray:subContainerArray];
-            //animate!
-            subAnimator = [[UIDynamicAnimator alloc] initWithReferenceView:view];
-            
-            //talk about behavior!  boo doesn't work.
-            subBehavior = [[WDBehaviorController alloc] initSubWithItems:subBubbleArray
-                           getYAxis:&(CurrentXAxis)];
-            [subAnimator addBehavior: subBehavior];
+            //add inner bubbles into physics array andbubble object into continer view
+            [subContainerArray addObject:v];
+            [containerView addSubview:v];
         }
+        
+        //main physics non mutable arrays for sub bubbles
+        subBubbleArray = [NSArray arrayWithArray:subContainerArray];
+        
+        //inner bubble physics animator
+        subAnimator = [[UIDynamicAnimator alloc] initWithReferenceView:containerView];
+        subBehavior = [[WDBehaviorController alloc] initSubViewWithItems:subBubbleArray
+                                                                getYAxis:&(CurrentYAxis)];
+        [subAnimator addBehavior:subBehavior];
+        
+        [parentContainerArray addObject:outerBubbleView];
     }
-    masterArray = [NSArray arrayWithArray:subBubbleArray];
     
-    for( WDParentBubbleView *v in masterArray ) {
-        NSLog( @"%@", NSStringFromCGRect( v.frame ) );
-    }
-    
+    ////main physics non mutable arrays for outer bubbles
+    masterArray = [NSArray arrayWithArray:parentContainerArray];
     animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
     behavior = [[WDBehaviorController alloc] initWithItems:masterArray getYAxis:&(CurrentYAxis)];
     [animator addBehavior:behavior];
@@ -141,7 +168,7 @@
 
 -(void)outputAccelertionData:(CMAcceleration)acceleration
 {
-    
+    //gravity
     CurrentYAxis= acceleration.y;
     CurrentXAxis =acceleration.x;
     
@@ -150,28 +177,37 @@
         //if y is -1, gravity is 1 - correct gravity
         
         CGVector MyCGVector={-1.0, 1.0 };
+        CGVector MySubBubbleCGVector={.10, -.10 };
+        subBehavior.g2.gravityDirection=MySubBubbleCGVector;
         behavior.g.gravityDirection=MyCGVector;
        
     }else if (CurrentYAxis > 0 && CurrentXAxis < 0 ){
         //MyCGVector = x,y
         //if y is 1, gravity is -1 - reverse gravity
         CGVector MyCGVector={-1.0,-1.0 };
+        CGVector MySubBubbleCGVector={.10, .10 };
+        subBehavior.g2.gravityDirection=MySubBubbleCGVector;
         behavior.g.gravityDirection=MyCGVector;
         
     }else if (CurrentYAxis < 0 && CurrentXAxis > 0 ){
         //MyCGVector = x,y
         //if y is -1, gravity is 1 - correct gravity
         CGVector MyCGVector={1.0, 1.0 };
+        CGVector MySubBubbleCGVector={-.10, -.10 };
+        subBehavior.g2.gravityDirection=MySubBubbleCGVector;
         behavior.g.gravityDirection=MyCGVector;
       
     }else if (CurrentYAxis > 0 && CurrentXAxis > 0 ){
         //MyCGVector = x,y
         //if y is 1, gravity is -1 - reverse gravity
         CGVector MyCGVector={1.0,-1.0 };
+        CGVector MySubBubbleCGVector={-.10, .10 };
+        subBehavior.g2.gravityDirection=MySubBubbleCGVector;
         behavior.g.gravityDirection=MyCGVector;
-        
     }
     
+    
+    //monitor accelerometer
     
     self.accX.text = [NSString stringWithFormat:@" %.2fg",acceleration.x];
     if(fabs(acceleration.x) > fabs(currentMaxAccelX))
